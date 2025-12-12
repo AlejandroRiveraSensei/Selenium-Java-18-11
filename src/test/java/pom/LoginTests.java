@@ -43,6 +43,7 @@ public class LoginTests extends BaseTest{
         inventory.clickBurgerManu();
 
         //Step 3: Click en logout
+        menu.clickAbout();
         menu.clickLogout();
 
         //Verification
