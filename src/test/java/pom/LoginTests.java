@@ -2,6 +2,7 @@ package pom;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.UserData;
 
 public class LoginTests extends BaseTest{
 
@@ -23,7 +24,7 @@ public class LoginTests extends BaseTest{
 
     @Test
     public void loginSuccess(){
-        login.login("standard_user","secret_sauce");
+        login.login(UserData.getUserName("standard"),UserData.getPassword("standard"));
         Assert.assertEquals(inventory.getTitleText(),"Products");
     }
 
