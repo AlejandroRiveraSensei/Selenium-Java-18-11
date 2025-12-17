@@ -1,6 +1,9 @@
-name: Run Selenium Tests
+name: SmokeTests
 
 on:
+  workflow_dispatch:  # Enable it manual execution
+
+  # ESTO LO COMENTE PARA QUE NO SE EJECUTE EN LOS PUSH DE CODIGO
   push:
     branches: [ "master", "main" ]
   pull_request:
@@ -48,3 +51,13 @@ jobs:
         with:
           name: allure-report
           path: target/allure-report
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: target/allure-report
+          destination_dir: allure-report
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

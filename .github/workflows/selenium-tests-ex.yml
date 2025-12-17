@@ -1,13 +1,13 @@
-name: Run Git Hub Actions Page
+name: ExampleRegressionSuite
 
 on:
   workflow_dispatch:  # Enable it manual execution
 
   # ESTO LO COMENTE PARA QUE NO SE EJECUTE EN LOS PUSH DE CODIGO
-  #push:
-  #  branches: [ "master", "main" ]
-  #pull_request:
-  #  branches: [ "master", "main" ]
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
 
 jobs:
   test:
@@ -29,8 +29,8 @@ jobs:
       - name: Install Allure CLI
         run: npm install -g allure-commandline --save-dev
 
-      - name: Run smoke test
-        run: mvn clean -Dtest=SmokeTests test
+      - name: Run regression test
+        run: mvn clean -Dtest=LoginTests test
 
       - name: Verify Allure content
         run: |
