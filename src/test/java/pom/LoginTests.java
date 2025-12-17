@@ -6,7 +6,7 @@ import utils.UserData;
 
 public class LoginTests extends BaseTest{
 
-    @Test
+    @Test(groups = "e2e")
     public void loginBlocked(){
         //Step 1: Login
         login.login("locked_out_user","secret_sauce");

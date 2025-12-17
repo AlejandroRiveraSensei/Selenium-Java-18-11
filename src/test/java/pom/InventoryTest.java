@@ -6,7 +6,7 @@ import utils.UserData;
 
 public class InventoryTest extends BaseTest{
 
-    @Test
+    @Test(groups = "regression")
     public void addProduct(){
         //Step 1: Login
         login.login(UserData.getUserName("standard"),UserData.getPassword("standard"));

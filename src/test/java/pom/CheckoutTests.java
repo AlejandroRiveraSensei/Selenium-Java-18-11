@@ -8,7 +8,7 @@ import utils.UserData;
 public class CheckoutTests extends BaseTest{
 
     @Test
-    public void checkoutSuccress(){
+    public void checkoutSucces(){
         //Step 1: login
         login.login(UserData.getUserName("standard"),UserData.getPassword("standard"));
 
