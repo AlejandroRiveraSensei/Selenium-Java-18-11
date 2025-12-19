@@ -1,4 +1,4 @@
-name: SmokeTests
+name: SmokeTests2
 
 on:
   workflow_dispatch:  # Enable it manual execution
